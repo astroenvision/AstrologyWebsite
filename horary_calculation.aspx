@@ -7,7 +7,7 @@
 <%--<%@ Register Src="~/usercontrol/menu_bar.ascx" TagName="menubar" TagPrefix="uc3" %>--%>
 <%@ Register Src="~/usercontrol/horary_menu.ascx" TagName="horarymenubar" TagPrefix="uc4" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head runat="server"> /*****************************CHNAG***/
     <title>Hora | Astro Envision
     </title>
     <link type="text/css" rel="stylesheet" href="CSS/main.css" />
