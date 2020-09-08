@@ -1,0 +1,6 @@
+
+
+Date --9/3/2020 10:40:53 AM
+ErrorMessage --Column 'NATAL_CATEGORY' does not belong to table Table. | Error Source:- System.Data | TargetSite:- System.Data.DataColumn GetDataColumn(System.String)
+
+****************************************************************************************

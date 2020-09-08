@@ -1,0 +1,304 @@
+﻿body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../IMAGES/bg.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../IMAGES/bg.jpg', sizingMethod='scale')";
+    margin: 0px;
+    padding: 0px;
+}
+
+.maindiv {
+    float: inherit;
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.astrocss {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: #E10F0F;
+    margin-top: 05px;
+}
+
+.astrohead {
+    float: left;
+    width: 1000px;
+    height: 37px;
+    background-color: #1A13A0;
+    margin-bottom: 10px;
+    background-image: url(../IMAGES/menubg.jpg);
+}
+
+    .astrohead ul {
+        margin-top: 10px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+        .astrohead ul li {
+            display: inline;
+            color: White;
+            padding-left: 30px;
+            padding-right: 35px;
+            text-align: justify;
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+            .astrohead ul li a {
+                text-decoration: none;
+                color: White;
+            }
+
+.keywordcss {
+    margin-bottom: 15px;
+    color: Black;
+    font-weight: bold;
+}
+
+.keyspancss {
+    margin-right: 10px;
+    margin-left: 00px;
+}
+
+.pnaletsort {
+    float: right;
+    color: White;
+    font-weight: bold;
+}
+
+.footer {
+    float: left;
+    width: 1000px;
+    height: 60px;
+    background-color: Black;
+    margin-top: 150px;
+    color: White;
+}
+
+.acfooter {
+    float: left;
+    width: 1000px;
+    height: 60px;
+    background-color: Black;
+    margin-top: 50px;
+    color: White;
+}
+
+.footersearch {
+    float: left;
+    width: 1000px;
+    height: 60px;
+    background-color: Black;
+    margin-top: 80px;
+    color: White;
+}
+
+.footer ul {
+    margin-top: 10px;
+    display: inline;
+    color: White;
+}
+
+    .footer ul li {
+        display: inline;
+        color: White;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: justify;
+        font-family: Verdana;
+        font-weight: bold;
+        font-size: 10px;
+    }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: White;
+        }
+
+.footer div {
+    text-align: center;
+    float: none;
+    margin-top: 5px;
+}
+
+.footlast {
+    margin-top: 8px;
+}
+
+.spgriddiv {
+    float: left;
+    width: 1000px;
+    border: 1px solid black;
+    height: auto;
+    background-color: #F2EEED;
+    margin-top: 5px;
+}
+
+.spgriddiv2 {
+    width: 985px;
+    float: left;
+    margin-top: 15px;
+    margin-left: 7px;
+    margin-right: 7px;
+    margin-bottom: 15px;
+}
+
+.clientdiv {
+    margin-bottom: 20px;
+    color: White;
+    font-size: 20px;
+}
+
+.hpgriddivfull {
+    float: left;
+    width: 520px;
+    height: 310px;
+}
+
+.hpgriddivfull1 {
+    float: left;
+    width: 1000px;
+    height: 310px;
+}
+
+.hpgriddiv {
+    float: left;
+    width: 588px;
+    border: 2px solid black;
+    background-color: #FAF8F9;
+    height: auto;
+}
+
+.hpgriddiv2 {
+    float: left;
+    width: 578px;
+    margin: 5px;
+}
+
+.buttondiv {
+    float: left;
+    margin-left: 0px;
+    margin-top: 10px;
+    width: 580px;
+    height: 40px;
+}
+
+.button {
+    margin-right: 10px;
+    height: 39px;
+    width: 100px;
+}
+
+.label {
+    font-size: 10px;
+}
+
+.keyspancss {
+    margin-right: 10px;
+    margin-left: 00px;
+}
+
+.filter {
+    color: Black;
+    font-weight: normal;
+}
+
+.filters {
+    color: Black;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.filterss {
+    color: Black;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.h_filters {
+    color: Black;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.h_filtersc {
+    color: Black;
+    font-weight: bold;
+    margin-left: 00px;
+}
+
+.planetsort {
+    float: left;
+    color: Black;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+    .planetsort span {
+        float: left;
+        padding-left: 10px;
+        padding-right: 12px;
+    }
+
+.f2-style {
+    color: red;
+}
+
+
+.buttonsearch {
+    margin-left: 370px;
+    height: 39px;
+    width: 100px;
+}
+
+.clickFieldinGrid {
+    color: Blue;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 0px solid #929292;
+    background-color: #ffffff;
+    font-family: verdana;
+    font-size: 12px;
+    height: 18px;
+    width: 210px;
+}
+
+
+
+
+
+
+.chartboxleft {
+    width: 50%;
+    margin: 0;
+    float: left;
+}
+
+.chartboxright {
+    width: 50%;
+    margin: 0;
+    float: left;
+    padding: 0 0 0 20px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .chartboxleft {
+        width: 100%;
+        margin: 0;
+        float: left;
+    }
+
+    .chartboxright {
+        width: 100%;
+        margin: 0;
+        float: left;
+        padding: 0 0 0 20px;
+    }
+}

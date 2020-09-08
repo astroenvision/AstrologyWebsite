@@ -1,0 +1,8 @@
+﻿function menuitem()
+{
+window.open();
+
+
+
+}
+

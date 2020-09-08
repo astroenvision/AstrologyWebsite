@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<newdata>
+  <table>
+    <!--Planet's In Various Awastha's In Varga's-->
+    <td>Explanation : In this Research Tool, Astrologer  can choose - One Planet or Multiple Planets with combination of one or more Awastha’s as given along with Various set of Vargas or any Individual Vargas for filter the Astro data in Individual Chart or in a Group of Chart)</td>
+
+    <!--Planets in Awastha’s – Planetary war etc-->
+    <td1>Explanation  ( In this Research Tool one can choose among any of the mentioned Awasthas which are degree based in the Chart in D-1 only)</td1>
+
+    <!--Planets in Rashi’s & House’s in Varga’s-->
+    <td2>Explanation : ( In this Research Tool, Astrologer, can  choose  - One Planet or Multiple Planets with combination of One or More Rashi’s OR One or More Houses OR One or Multiple planet with Rashi and house Combination)  in the Vargas mentioned OR in any individual Varga.as desired in Individual Chart or a Group of chart)</td2>
+
+    <!--Conjunction of Chosen Planets in Rashi and Houses in Varga’s-->
+    <td3>Explanation : ( In this Research Tool, Astrologer can  choose  - Conjunction of Two or more planets up to 8 Planets with combination of One or More Rashi’s OR One or More House’s OR Conjunction of Planets with Rashi and with house Combination)  in the Vargas mentioned OR in any individual Varga as desired  in Individual chart or in a Group of chart).</td3>
+
+    <!--Conjunction of chosen Planets in Varga’s-->
+    <td4>Explanation : ( In this Research Tool, Astrologer can  choose  - Conjunction of Two or more planets up to 8 Planets in the Vargas mentioned OR in any individual Varga as desired for Individual or a Group of Chart) .</td4>
+
+    <!--Conjunction of Planets – Number of Planets-->
+    <td5>Explanation : ( In this Research Tool, Astrologer can choose conjunction between Two planets to Five Planets wherever they exists in the Rashi or in House or with a Combination of Number of Planet’s conjunction in  Rashi and House in Varga’s or in Individual Vargas  - as desired for Individual Chart of a Group of Chart) </td5>
+
+    <!--Search the  Single or Multiple Planets on Basis of Multiple Nakashtra/Constellation-->
+    <td6>Explanation – Astrologer. can choose , A single or Multiple Planet’s Position in One or More Nakashtra / constellation  - For Individual or Group of Chart.  </td6>
+
+    <!--Search the Conjuction of Planets in Single or Multiple Nakashtra’s/Constellation’s-->
+    <td7> Explanation : - Astrologer can search the conjunction of two or more Planets in Single of Multiple Nakashtra’s / Constellation’s</td7>
+   
+    <!--Search for Aspects of Planet’s-->
+    <td8> Explanation : Astrologer can search for aspect of a Single Planet or Multiple Planets in a specific Varga for a Individual of in a Group of chart. This is restricted to a Single Varga search at one point of time.</td8>
+
+
+  </table>
+
+</newdata>

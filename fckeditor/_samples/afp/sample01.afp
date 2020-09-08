@@ -1,0 +1,34 @@
+
+
+<html>
+	<head>
+		<title>AFP Sample 1</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<link href="../sample.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<h1>AFP - Sample 1</h1>
+		This sample displays a normal HTML form with an FCKeditor with full features enabled.
+		<hr>
+		<form action="sampleposteddata.afp" method="post" target="_blank">
+<%
+
+			sBasePath="../../../fckeditor/"		&& Change this to your local path
+
+			lcText=[<p>This is some <strong>sample text</strong>. You are using ]
+			lcText=lcText+[<a href='http://www.fckeditor.net/'>FCKeditor</a>.]
+
+			oFCKeditor = CREATEOBJECT("FCKeditor")
+			oFCKeditor.fckeditor("FCKeditor1")
+			oFCKeditor.BasePath	= sBasePath
+			oFCKeditor.cValue	= lcText
+
+			? oFCKeditor.Create()
+
+%>
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

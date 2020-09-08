@@ -1,0 +1,314 @@
+﻿.form-main
+{
+	position: relative;
+	vertical-align: top;
+	text-align: center;
+	margin: 1% auto 0% auto;
+	width: 96%;
+}
+
+	.form-main label
+	{
+		margin-right: 10px;
+	}
+
+	.form-main .form-white-background
+	{
+		float: left;
+		margin: 0% auto;
+		width: 100%;
+		box-sizing: border-box;
+		background-color: #ffffff;
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		padding: 1% 2% 1% 2%;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		box-shadow: 0px 0px 3px 2px #CAC6C6;
+		-moz-box-shadow: 0px 0px 3px 2px #CAC6C6;
+		-webkit-box-shadow: 0px 0px 3px 2px #CAC6C6;
+	}
+
+	.form-main .form-title-row
+	{
+		text-align: center;
+		margin-bottom: 10px;
+		border-bottom: 2px solid #f4600a;
+		float: left;
+		width: 100%;
+	}
+
+	.form-main h1
+	{
+		display: inline-block;
+		box-sizing: border-box;
+		color: #4c565e;
+		font-size: 1.2em;
+		padding: 0 0 0.50em 0;
+		border-bottom: 0px solid #f4600a;
+		margin: 0;
+		text-align: left;
+		float: left;
+	}
+
+	.form-main h2
+	{
+		display: inline-block;
+		box-sizing: border-box;
+		color: #e33335;
+		font-size: 0.90em;
+		padding: 0 0 0.45em 0;
+		border-bottom: 0px solid #f4600a;
+		margin: 0;
+		text-align: left;
+		float: right;
+	}
+
+	.form-main .form-row > label span
+	{
+		display: inline-block;
+		box-sizing: border-box;
+		color: #5f5f5f;
+		/*width: 75px;*/
+		text-align: left;
+		padding-right: 10px;
+	}
+
+	.form-main .form-row > label h4
+	{
+		display: inline-block;
+		box-sizing: border-box;
+		color: #5f5f5f;
+		text-align: right;
+		padding: 0em 0em 0em 0em;
+		margin: 1em 0em 0em 0em;
+	}
+
+.h4labelcss
+{
+	padding: 0em 0em 0em 0em !important;
+	margin: 0em 0.5em 0em 0.5em !important;
+	width: auto !important;
+}
+
+.form-main .form-row > span
+{
+	display: inline-block;
+	box-sizing: border-box;
+	color: black;
+	width: 100%;
+	text-align: left;
+	padding-left: 128px;
+	font-weight: bold;
+	font-size: 0.85em;
+}
+
+.form-main .form-row input
+{
+	color: #5f5f5f;
+	box-sizing: border-box;
+	width: 60%;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 12px 18px;
+	border: 1px solid #dbdbdb;
+	border-radius: 6px;
+}
+
+.form-main .form-row textarea
+{
+	color: #5f5f5f;
+	box-sizing: border-box;
+	width: 60%;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 5px 5px;
+	border: 1px solid #dbdbdb;
+	border-radius: 6px;
+}
+
+.dropdowncss
+{
+	color: #5f5f5f !important;
+	box-sizing: border-box;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+	padding: 11px 10px 11px 10px!important;
+	margin: 0em !important;
+	border: 1px solid #dbdbdb !important;
+	border-radius: 6px;
+	width: 210px;
+}
+
+.buttoncss
+{
+	border-radius: 5px !important;
+	background-color: #f4600a;
+	color: #ffffff !important;
+	font-weight: bold;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+	padding: 5px 20px !important;
+	border: 0 !important;
+	margin: 0px auto 0 !important;
+	cursor: pointer;
+	width: auto !important;
+}
+
+	.buttoncss:hover
+	{
+		background-color: #55504e;
+	}
+
+    .marginlft
+    {
+        margin:0px 0px 0px 260px !important;
+    }
+.buttoncssfltright
+{
+	float: right;
+	border-radius: 5px !important;
+	background-color: #f4600a;
+	color: #ffffff !important;
+	font-weight: bold;
+	box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08) !important;
+	padding: 5px 20px !important;
+	border: 0 !important;
+	margin: 0px auto 0 !important;
+	cursor: pointer;
+	width: auto !important;
+}
+
+	.buttoncssfltright:hover
+	{
+		background-color: #55504e;
+	}
+
+
+
+
+/*.Grid {background-color: #fff; margin: 5px 0 10px 0; border: solid 1px #525252; border-collapse:collapse; font-family:Calibri; color: #474747;}
+.Grid td {
+      padding: 2px; 
+      border: solid 1px #c1c1c1; }
+.Grid th  {
+      padding : 4px 2px; 
+      color: #fff; 
+      background: #363670 url(Images/grid-header.png) repeat-x top; 
+      border-left: solid 1px #525252; 
+      font-size: 0.9em; }
+.Grid .alt {
+      background: #fcfcfc url(Images/grid-alt.png) repeat-x top; }
+.Grid .pgr {background: #363670 url(Images/grid-pgr.png) repeat-x top; }
+.Grid .pgr table { margin: 3px 0; }
+.Grid .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #fff; line-height: 12px; }   
+.Grid .pgr a { color: Gray; text-decoration: none; }
+.Grid .pgr a:hover { color: #000; text-decoration: none; }*/
+
+/*gridview*/
+.table table tbody tr td a,
+.table table tbody tr td span
+{
+	position: relative;
+	float: left;
+	padding: 0px 5px;
+	margin-left: 0px;
+	line-height: 1.42857143;
+	color: white;
+	text-decoration: none;
+	background-color: #4c4848;
+	border: 1px solid #ddd;
+}
+
+.table table > tbody > tr > td > span
+{
+	z-index: 3;
+	color: #fff;
+	cursor: default;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+
+.table table > tbody > tr > td:first-child > a,
+.table table > tbody > tr > td:first-child > span
+{
+	margin-left: 0;
+	/*border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;*/
+}
+
+.table table > tbody > tr > td:last-child > a,
+.table table > tbody > tr > td:last-child > span
+{
+	/*border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;*/
+}
+
+.table table > tbody > tr > td > a:hover,
+.table table > tbody > tr > td > span:hover,
+.table table > tbody > tr > td > a:focus,
+.table table > tbody > tr > td > span:focus
+{
+	z-index: 2;
+	color: white;
+	background-color: #55504e;
+	border-color: #ddd;
+}
+
+.tablepagging
+{
+	background-color: #646464;
+    font-family: Arial;
+    color: White;
+    height: 30px;
+    text-align: left;
+}
+
+	.tablepagging td
+	{
+		padding: 5px;
+	}
+	.tablepagging th
+	{
+		padding: 5px;
+	}
+/*end gridview */
+
+
+
+
+
+.grdviewstable th
+    {
+        background-color:#F4600A;
+        color:#ffffff;
+    }
+    .grdviewstable tr:nth-child(even)
+    {
+        background-color:#ffffff;
+    }
+    .grdviewstable tr:nth-child(odd)
+    {
+        background-color:#f5f5f5;
+    }
+    .grdviewstable td
+    {
+        padding-left:10px;
+    }
+
+	tr.RowStyle{text-align:center; background-color:#ffffff; }
+ 
+tr.AlternatingRowStyle {text-align:center; background-color:#7fefae;}
+ 
+tr.RowStyle:hover {cursor:pointer; background-color:#d6c6bd;}
+ 
+tr.AlternatingRowStyle:hover {cursor:pointer; background-color:#d6c6bd;}
+
+	.FooterStyle {background-color:#938ede; height:25px;}
+
+.PagerStyle table { margin:auto;border:none;}
+ 
+tr.PagerStyle {text-align:center; background-color:#F4600A !important;}
+ 
+.PagerStyle table td {border:1px; padding:5px; }
+
+.PagerStyle td {padding: 0.25rem;}
+ 
+.PagerStyle a {border:1px solid #fff; padding:1px 10px 1px 10px; color:#333; text-decoration:none;}
+.PagerStyle span {padding:1px 10px 1px 10px; color:#000; font-weight:bold; border:2px solid #858690;}

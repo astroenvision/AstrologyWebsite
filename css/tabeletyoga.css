@@ -1,0 +1,197 @@
+﻿@media  (min-width:321px) and (max-width:900px){
+
+body 
+{
+	
+}
+
+.div_curve p {
+    margin-bottom: 0px;
+    font-weight: 600;
+    margin-left: 40px;
+    text-align: center;
+    font-family: PT Sans Narrow;
+    font-size: 16px;
+    color: rgb(3, 74, 134);
+}
+
+.yoga_listbox
+  {
+  	width: 254px;   	
+  height: 271px;
+   margin-top: 8px;
+    }
+.new_yogas_div
+{
+	margin-top: 440px; 
+margin-left: 401px;
+}
+.div_curve p2 {
+    margin-bottom: 20px;
+    margin-top: 53px;
+    text-align: left;
+    margin-right: 7px;
+    font-family: Open Sans !important;
+    font-size: 11px;
+    color: rgb(92, 92, 92);
+}
+.yoga_labes_data{margin-left: 36px;}
+.loadingimage_yoga{margin-left: 70px;}
+/*.div_header_significator
+{
+	-moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow: 2px 2px 5px #000;
+	font-weight:600; 
+	text-decoration:none;
+	border:1px solid #e3e3e3;
+   margin:10px 0px ;
+  
+   font-size:12px;font-weight:400;
+  width: 540px;
+  margin-left:10px;
+  background-color:#FFF;
+  margin-top:0px;
+ 
+}*/
+ .yoga_drop
+ {
+ 	margin-left:75px;
+ 	margin-top:4px;
+ 	width: 400px;
+ 	
+ 	
+ }
+ 
+ .divg_hora
+{
+	width:974px;
+ overflow:auto;
+display:none; 
+ height:auto;
+ max-height:300px;
+ border:solid 1px #e2e2e2;
+   margin-top: 20px;
+   margin-left: 15px;
+   width: 514px;
+ }
+/* .horar_sidngi_div
+{
+	margin-left: 240px; margin-top: 10px; margin-bottom: 10px;
+} */
+
+.div_header{width: 528px;overflow:scroll;float:left;}
+   .div_curve1
+{
+	
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow: 2px 2px 5px #000;
+	font-weight:600; 
+	text-decoration:none;
+	border:1px solid #e3e3e3;
+   font-size:11px;
+   font-weight:400;
+   margin-left:12px;
+    width:90% !important;
+ 
+   }
+}
+
+
+
+
+
+
+
+
+@media  (min-width:10px) and (max-width:320px)
+{
+	
+	body 
+{
+	
+}
+
+.div_curve{margin:6px !important;float:left; width:260px !important;}
+ .yoga_listbox
+  {
+  	width: 254px;   	
+  height: 271px;
+   margin-top: 8px;
+   
+  }
+
+  
+.new_yogas_div
+  {
+  width: 20px; margin-top: 36px;
+   margin-left: 105px;
+    margin-bottom: 12px;
+  	
+  }
+	
+.nwe_box_div {
+   
+    border: 1px solid #E3E3E3;
+    box-shadow: 2px 2px 5px #000000;
+    float: left;
+    font-size: 12px;
+    font-weight: 400;
+    height: 100px;
+    margin: 10px 35px;
+    text-decoration: none;
+    width: 173px;
+}
+.yoga_labes_data{margin-left: 36px;}
+.loadingimage_yoga{margin-left: 70px;}
+
+.divg_hora
+{
+	width:974px;
+ overflow:auto;
+display:none; 
+ height:auto;
+ max-height:300px;
+ border:solid 1px #e2e2e2;
+   margin-top: 20px;
+   margin-left: 0px;
+   width: 260px;
+ }
+ 
+ .yoga_drop
+ {
+ 	margin-left:0px;
+ 	margin-top:4px;
+ 	width: 180px;
+ 	margin:5px;
+ 	
+ }
+ 
+ 
+.g_data
+{
+	margin-left:16px;
+	margin-bottom:11px;
+}
+
+.yoga_drop1 select{ margin:5px;}
+
+.div_header{width: 270px;overflow:scroll;}
+ .div_curve1
+{
+	
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow: 2px 2px 5px #000;
+	font-weight:600; 
+	text-decoration:none;
+	border:1px solid #e3e3e3;
+   margin:10px  ;  
+/*  background-color:#FFFACD !important;*/
+   font-size:11px;
+   font-weight:400;
+  
+   width:242px !important;
+ 
+   }
+}
+

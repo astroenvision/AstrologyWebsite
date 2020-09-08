@@ -1,0 +1,2119 @@
+﻿using System;
+using System.Data;
+using System.Data.OracleClient;
+namespace ASTROLOGY.classesoracle
+{
+    /// <summary>
+    /// Summary description for subscription
+    /// </summary>
+    public class subscription : orclconnection
+    {
+        public subscription()
+        {
+            //
+            // TODO: Add constructor logic here
+            //
+        }
+
+        public DataSet AddToCart(int autoid, string cartid, string subscriberuserid, string categoryid,string categoryname, string questionid, string question,string totalques, string ans, string totalprice,string usertype,string groupid,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_SAVE_ADDTOCART", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTO_ID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CART_ID", OracleType.VarChar, 4000);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = cartid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("CLIENTEMAILID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = subscriberuserid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("CATEGORYID", OracleType.VarChar, 4000);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = categoryid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("CATEGORYNAME", OracleType.VarChar, 4000);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = categoryname;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("QUESTION_ID", OracleType.VarChar, 4000);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = questionid;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("QUESTION", OracleType.VarChar, 4000);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = question;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("TOTALQUESTION", OracleType.VarChar, 10);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = totalques;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("ANSWERS", OracleType.VarChar, 4000);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = ans;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("TOTALPRICE", OracleType.VarChar, 4000);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = totalprice;
+                orclcmd.Parameters.Add(prm10);
+
+                OracleParameter prm11 = new OracleParameter("USERTYPE", OracleType.VarChar, 4000);
+                prm11.Direction = ParameterDirection.Input;
+                prm11.Value = usertype;
+                orclcmd.Parameters.Add(prm11);
+
+                OracleParameter prm12 = new OracleParameter("GROUPID", OracleType.VarChar, 4000);
+                prm12.Direction = ParameterDirection.Input;
+                prm12.Value = groupid;
+                orclcmd.Parameters.Add(prm12);
+
+                OracleParameter prm13 = new OracleParameter("FLAG", OracleType.VarChar, 50);
+                prm13.Direction = ParameterDirection.Input;
+                prm13.Value = flag;
+                orclcmd.Parameters.Add(prm13);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("outflag2", OracleType.Cursor);
+                orclcmd.Parameters["outflag2"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet AddToCartBilling(int autoid, string cartid, string totalprice, string groupid,string paymentstatus, string flag , string PaymentType,string PaymentFor)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_SAVE_ADDTOCART_BILLING", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTO_ID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = cartid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("TOTALPRICE", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = totalprice;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = groupid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("PAYMENTSTATUS", OracleType.VarChar, 10);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = paymentstatus;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("FLAGTYPE", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = flag;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("PAYMENTTYPE", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = PaymentType;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("PAYMENTFOR", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = PaymentFor;
+                orclcmd.Parameters.Add(prm8);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public DataSet UpdateToCartBilling(int autoid, string cartid, string emailid,string totalprice, string paymentstatus, string RegUserId, string RegUserEmailId,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_ADDTOCART_BILLING", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTO_ID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = cartid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("EMAILID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = emailid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("TOTALPRICE", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = totalprice;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("PAYMENTSTATUS", OracleType.VarChar, 10);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = paymentstatus;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("REGUSERID", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = RegUserId;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("REGUSEREMAILID", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = RegUserEmailId;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("FLAGTYPE", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = flag;
+                orclcmd.Parameters.Add(prm8);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataSet GetAddToCart(string cartid, string usertype, string groupid,string catid, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_ADDTOCART", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = cartid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = usertype;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = groupid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("CAT_ID", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = catid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("FLAG", OracleType.VarChar, 30);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = flag;
+                orclcmd.Parameters.Add(prm5);
+                
+                orclcmd.Parameters.Add("p_out", OracleType.Cursor);
+                orclcmd.Parameters["p_out"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataSet AstGetCommon(string Id, string UrseType, string GroupId, string Flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_COMMON", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("IDVAL", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Id;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = UrseType;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = GroupId;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = Flag;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("p_out", OracleType.Cursor);
+                orclcmd.Parameters["p_out"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet AstDeleteCommon(string Id,string cartdid, string UrseType, string GroupId, string Flag)
+        {
+            OracleConnection con;
+            OracleCommand cmd;
+            con = GetConnection();
+            DataSet ds = new DataSet();
+            OracleDataAdapter da = new OracleDataAdapter();
+            try
+            {
+                con.Open();
+                cmd = GetCommand("ASP_DELETE_COMMON", ref con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("IDVAL", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Id;
+                cmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CARTD_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = cartdid;
+                cmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = UrseType;
+                cmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = GroupId;
+                cmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = Flag;
+                cmd.Parameters.Add(prm5);
+
+                cmd.Parameters.Add("outflag", OracleType.Cursor);
+                cmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = cmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+            finally
+            {
+                CloseConnection(ref con);
+            }
+        }
+
+
+        public DataSet GetCategoryPrice(string cartid, string usertype, string groupid, string catid, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_PRICE", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = cartid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = usertype;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = groupid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("CAT_ID", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = catid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = flag;
+                orclcmd.Parameters.Add(prm5);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out2", OracleType.Cursor);
+                orclcmd.Parameters["p_out2"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet update_horaryquestion_ans(int Autoid, int Questionid, string Answer,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_HORARY_QUES_ANS", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTO_ID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("QUESTION_ID", OracleType.Number);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = Questionid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("ANSWERVAL", OracleType.VarChar, 4000);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = Answer;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 50);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = flag;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public DataSet get_natal_questions_substring(string catid,string questionid, string questionval, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_NATAL_QUESTIONS", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("CAT_ID", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = catid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("QUESTION_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = questionid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("QUESTIONVAL", OracleType.VarChar, 2000);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = questionval;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = flag;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("p_out", OracleType.Cursor);
+                orclcmd.Parameters["p_out"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public DataSet get_natalquestion_ans(string s, string ss, string kk, string rashi, string key, string planets, string chart, string astrologer1)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                //orclcmd = GetCommand("ast_degree_comb_search", ref con);
+                orclcmd = GetCommand("AST_DEGREE_COMB_SEARCH_TYPE", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("p_code", OracleType.VarChar, 2000);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = s;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("ptxt", OracleType.VarChar, 2000);
+                prm2.Direction = ParameterDirection.Input;
+                if (ss == "")
+                {
+                    prm2.Value = '2';
+                }
+                else
+                {
+                    prm2.Value = ss;
+                }
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("pflag", OracleType.VarChar, 2000);
+                prm3.Direction = ParameterDirection.Input;
+                if (kk == "")
+                {
+                    prm3.Value = '3';
+                }
+                else
+                {
+                    prm3.Value = kk;
+                }
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("prashilagna", OracleType.VarChar, 2000);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = rashi;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("keyword", OracleType.VarChar, 2000);
+                prm5.Direction = ParameterDirection.Input;
+                if (key == "")
+                {
+                    prm5.Value = '2';
+                }
+                else
+                {
+                    prm5.Value = key;
+                }
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("allplanets", OracleType.VarChar, 2000);
+                prm6.Direction = ParameterDirection.Input;
+                if (planets == "")
+                {
+                    prm6.Value = '1';
+                }
+                else
+                {
+                    prm6.Value = planets;
+                }
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("p_chart", OracleType.VarChar, 2000);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = chart;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("p_astro", OracleType.VarChar, 2000);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = astrologer1;
+                orclcmd.Parameters.Add(prm8);
+
+                orclcmd.Parameters.Add("p_accounts", OracleType.Cursor);
+                orclcmd.Parameters["p_accounts"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+
+        public DataSet get_natalquestion_ans_temp(string s, string ss, string kk, string rashi, string key, string planets, string chart, string astrologer1, string sessionid, string actionflag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open(); 
+               orclcmd = GetCommand("AST_DEGREE_COMB_SEARCH_TEMP", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("p_code", OracleType.VarChar, 2000);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = s;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("ptxt", OracleType.VarChar, 2000);
+                prm2.Direction = ParameterDirection.Input;
+                if (ss == "")
+                {
+                    prm2.Value = '2';
+                }
+                else
+                {
+                    prm2.Value = ss;
+                }
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("pflag", OracleType.VarChar, 2000);
+                prm3.Direction = ParameterDirection.Input;
+                if (kk == "")
+                {
+                    prm3.Value = '3';
+                }
+                else
+                {
+                    prm3.Value = kk;
+                }
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("prashilagna", OracleType.VarChar, 2000);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = rashi;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("keyword", OracleType.VarChar, 2000);
+                prm5.Direction = ParameterDirection.Input;
+                if (key == "")
+                {
+                    prm5.Value = '2';
+                }
+                else
+                {
+                    prm5.Value = key;
+                }
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("allplanets", OracleType.VarChar, 2000);
+                prm6.Direction = ParameterDirection.Input;
+                if (planets == "")
+                {
+                    prm6.Value = '1';
+                }
+                else
+                {
+                    prm6.Value = planets;
+                }
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("p_chart", OracleType.VarChar, 2000);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = chart;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("p_astro", OracleType.VarChar, 2000);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = astrologer1;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("p_sessionid", OracleType.VarChar, 2000);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = sessionid;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("p_action", OracleType.VarChar, 200);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = actionflag;
+                orclcmd.Parameters.Add(prm10);
+
+                orclcmd.Parameters.Add("p_accounts", OracleType.Cursor);
+                orclcmd.Parameters["p_accounts"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+
+        public DataSet update_natalquestion_ans(int Autoid, int Questionid, string Answer,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_NATAL_QUES_ANS", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTO_ID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("QUESTION_ID", OracleType.Number);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = Questionid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("ANSWERVAL", OracleType.Clob);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = Answer;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = flag;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet UpdatePaymentStatus(string cartidval, string emailid, string groupval, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_PAYMENTSTATUS", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = cartidval;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USER_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = emailid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = groupval;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 50);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = flag;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet Get_Manglik_Dosha_Result(string planet, string lagnachart, string moonchart, string venuschart, string lagnapoints, string moonpoints, string venuspoints, string doshaflag, string flag, string noofplanet)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_MANGLIK_DOSHA_RESULT", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("PLANETNAME", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = planet;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("LAGNACHART", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = lagnachart;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("MOONCHART", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = moonchart;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("VENUSCHART", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = venuschart;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("LAGNAPOINTS", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = lagnapoints;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("MOONPOINTS", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = moonpoints;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("VENUSPOINTS", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = venuspoints;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("DOSHAFLAG", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = doshaflag;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = flag;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("NOOFPLANET", OracleType.VarChar, 100);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = noofplanet;
+                orclcmd.Parameters.Add(prm10);
+                
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out2", OracleType.Cursor);
+                orclcmd.Parameters["p_out2"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out3", OracleType.Cursor);
+                orclcmd.Parameters["p_out3"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out4", OracleType.Cursor);
+                orclcmd.Parameters["p_out4"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out5", OracleType.Cursor);
+                orclcmd.Parameters["p_out5"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out6", OracleType.Cursor);
+                orclcmd.Parameters["p_out6"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public DataSet Get_Dosha_Samya_Result(string planet, string lagnachart, string moonchart, string venuschart, string lagnapoints, string moonpoints, string venuspoints, string doshaflag, string flag, string noofplanet)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_DOSHA_SAMYA_RESULT", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("PLANETNAME", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = planet;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("LAGNACHART", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = lagnachart;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("MOONCHART", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = moonchart;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("VENUSCHART", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = venuschart;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("LAGNAPOINTS", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = lagnapoints;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("MOONPOINTS", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = moonpoints;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("VENUSPOINTS", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = venuspoints;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("DOSHAFLAG", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = doshaflag;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = flag;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("NOOFPLANET", OracleType.VarChar, 100);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = noofplanet;
+                orclcmd.Parameters.Add(prm10);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataSet AstGetEndUserLagna(string Id, string UrseType, string GroupId, string Flag, string NoofCat)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_ENDUSER_LAGNA", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("IDVAL", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Id;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = UrseType;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = GroupId;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = Flag;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("NOOFCAT", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = NoofCat;
+                orclcmd.Parameters.Add(prm5);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out2", OracleType.Cursor);
+                orclcmd.Parameters["p_out2"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out3", OracleType.Cursor);
+                orclcmd.Parameters["p_out3"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet InsertClientInfo(int autoid, string name,string email,string conactno,string pwd,string address,string city,string state,string country,string pincode,string active,string user_gender, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_SAVE_CLIENTINFO", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("AUTOID", OracleType.Number);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = autoid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CLIENTNAME", OracleType.VarChar, 200);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = name;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("CLIENTEMAILID", OracleType.VarChar, 200);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = email;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("CLIENTCONTACT_NO", OracleType.VarChar, 50);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = conactno;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("CLIENTPASSWORD", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = pwd;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("CLIENTADDRESS", OracleType.VarChar, 200);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = address;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("CLIENTCITY", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = city;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("CLIENTSTATE", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = state;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("CLIENTCOUNTRY", OracleType.VarChar, 100);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = country;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("PINCODEVALUE", OracleType.VarChar, 50);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = pincode;
+                orclcmd.Parameters.Add(prm10);
+
+                OracleParameter prm11 = new OracleParameter("ACTIVEVALUE", OracleType.VarChar, 1);
+                prm11.Direction = ParameterDirection.Input;
+                prm11.Value = active;
+                orclcmd.Parameters.Add(prm11);
+
+                OracleParameter prm12 = new OracleParameter("CLIENTGENDER", OracleType.VarChar, 10);
+                prm12.Direction = ParameterDirection.Input;
+                prm12.Value = user_gender;
+                orclcmd.Parameters.Add(prm12);
+
+                OracleParameter prm13 = new OracleParameter("FLAGVALUE", OracleType.VarChar, 50);
+                prm13.Direction = ParameterDirection.Input;
+                prm13.Value = flag;
+                orclcmd.Parameters.Add(prm13);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet CheckLoginEndUser(string mail, string pass, string usertype, string groupid,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_CHECK_LOGIN_ENDUSER", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("EMAILIDVAL", OracleType.VarChar, 200);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = mail;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("PASSWORDVAL", OracleType.VarChar, 200);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = pass;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("USERTYPE", OracleType.VarChar, 200);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = usertype;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("GROUPID", OracleType.VarChar, 200);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = groupid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("FLAGVALUE", OracleType.VarChar, 200);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = flag;
+                orclcmd.Parameters.Add(prm5);
+
+                orclcmd.Parameters.Add("POUT1", OracleType.Cursor);
+                orclcmd.Parameters["POUT1"].Direction = ParameterDirection.Output;
+                orclcmd.Parameters.Add("POUT2", OracleType.Cursor);
+                orclcmd.Parameters["POUT2"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                ds.Dispose();
+                con.Close();
+            }
+        }
+
+        public DataSet UpdateCommon(string ID, string UserId, string UserEmailId,string UserType, string GroupId, string CartID, string Value1, string Value2, string Value3, string Value4, string Value5,string Flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_COMMON", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("IDVAL", OracleType.VarChar,10);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = ID;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USER_ID", OracleType.VarChar, 10);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = UserId;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("USER_EMAILID", OracleType.VarChar, 50);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = UserEmailId;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("USER_TYPE", OracleType.VarChar, 10);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = UserType;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("GROUPID", OracleType.VarChar, 10);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = GroupId;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("CARTD_ID", OracleType.VarChar, 20);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = CartID;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("VALUE1", OracleType.VarChar, 4000);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = Value1;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("VALUE2", OracleType.VarChar, 4000);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = Value2;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("VALUE3", OracleType.VarChar, 4000);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = Value3;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("VALUE4", OracleType.VarChar, 4000);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = Value4;
+                orclcmd.Parameters.Add(prm10);
+
+                OracleParameter prm11 = new OracleParameter("VALUE5", OracleType.VarChar, 4000);
+                prm11.Direction = ParameterDirection.Input;
+                prm11.Value = Value5;
+                orclcmd.Parameters.Add(prm11);
+
+                OracleParameter prm12 = new OracleParameter("FLAG", OracleType.VarChar, 50);
+                prm12.Direction = ParameterDirection.Input;
+                prm12.Value = Flag;
+                orclcmd.Parameters.Add(prm12);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public DataSet GetConsultPrice(string id, string cartid, string userid, string useremail, string usertype, string groupid, string servicename, string packname,string currencytype,string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_PRICE_CONSULT", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("IDVAL", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = id;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CARTID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = cartid;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("USERID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = userid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("USEREMAIL", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = useremail;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = usertype;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = groupid;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("SERVICENAME", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = servicename;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("PACKNAME", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = packname;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("CURRENCYTYPE", OracleType.VarChar, 10);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = currencytype;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = flag;
+                orclcmd.Parameters.Add(prm10);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out2", OracleType.Cursor);
+                orclcmd.Parameters["p_out2"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public DataSet Get_Manglik_Dosha_Predictive( string flag,string BoyTotalPoints, string GirlTotalPoints)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_MANGLIKDOSHA_PREDIC", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 500);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("BOY_TOTAL_POINTS", OracleType.VarChar, 10);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = BoyTotalPoints;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GIRL_TOTAL_POINTS", OracleType.VarChar, 10);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = GirlTotalPoints;
+                orclcmd.Parameters.Add(prm3);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet Get_Dosha_Samya_Predictive(string flag, string BoyTotalPoints, string GirlTotalPoints)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_DOSHASAMYA_PREDIC", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 500);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("BOY_TOTAL_POINTS", OracleType.VarChar, 10);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = BoyTotalPoints;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GIRL_TOTAL_POINTS", OracleType.VarChar, 10);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = GirlTotalPoints;
+                orclcmd.Parameters.Add(prm3);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                ASTROLOGY.classesoracle.main.SaveLogEntry(ex.Message + " | Error Source:- " + ex.Source + " | TargetSite:- " + ex.TargetSite.ToString());
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+
+        public DataSet GetLagnaPredictive(string Rashi, string Flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_LAGNA_PREDICTIVE", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("RASHIVAL", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Rashi;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("FLAG", OracleType.VarChar, 200);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = Flag;
+                orclcmd.Parameters.Add(prm2);
+
+                orclcmd.Parameters.Add("p_out1", OracleType.Cursor);
+                orclcmd.Parameters["p_out1"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_out2", OracleType.Cursor);
+                orclcmd.Parameters["p_out2"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+
+        public DataSet ChangeUserPassword(string Flag , string Email, string OldPassword , string NewPassword)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_CHANGE_PASSWORD", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 200);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("UserEmailId", OracleType.VarChar, 200);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = Email;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("OldPassword", OracleType.VarChar, 200);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = OldPassword;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("NewPassword", OracleType.VarChar, 200);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = NewPassword;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        #region MyCartDetails
+        public DataSet GetMyCartDetails(string cartid, string usertype, string groupid, string catid, string EmailID, string flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GET_MYCART", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("CART_ID", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = cartid;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERTYPE", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = usertype;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = groupid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("CAT_ID", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = catid;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("USER_ID", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = EmailID;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("FLAG", OracleType.VarChar, 200);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = flag;
+                orclcmd.Parameters.Add(prm6);
+
+                orclcmd.Parameters.Add("p_out", OracleType.Cursor);
+                orclcmd.Parameters["p_out"].Direction = ParameterDirection.Output;
+
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+
+        #region Get Category Price List
+        public DataSet ManageCategoryPrice(string Flag, string CatID, string ID, string PriceType)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_GETPRICEDETAILS", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("CATID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = CatID;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("P_ID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = ID;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("PRICETYPE", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = PriceType;
+                orclcmd.Parameters.Add(prm4);
+
+                orclcmd.Parameters.Add("OutFlag", OracleType.Cursor);
+                orclcmd.Parameters["OutFlag"].Direction = ParameterDirection.Output;
+
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+        #region Update Category Price List
+        public DataSet UpdateCategoryPrice(string Flag, string ID, string PriceType , string ActualPrice , string CatId , string DiscountPercentage , 
+            string DiscountAmount , string FinalAmount, string InrUsdRate , string IncreaseRate , string ActualPriceUsd , string DiscountPriceUsd , string DiscountPercentageUsd ,string FinalAmountUsd , string IncreasePriceInINR)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_CATPRICE", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("P_ID", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = ID;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("P_PRICETYPE", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = PriceType;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("P_PRICE", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = ActualPrice;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("P_CATID", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = CatId;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("P_DISCOUNTPER", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = DiscountPercentage;
+                orclcmd.Parameters.Add(prm6);
+
+                OracleParameter prm7 = new OracleParameter("P_DISCOUNTPRICE", OracleType.VarChar, 100);
+                prm7.Direction = ParameterDirection.Input;
+                prm7.Value = DiscountAmount;
+                orclcmd.Parameters.Add(prm7);
+
+                OracleParameter prm8 = new OracleParameter("P_PAYABLEAMOUNT", OracleType.VarChar, 100);
+                prm8.Direction = ParameterDirection.Input;
+                prm8.Value = FinalAmount;
+                orclcmd.Parameters.Add(prm8);
+
+                OracleParameter prm9 = new OracleParameter("P_INRUSDRATE", OracleType.VarChar, 100);
+                prm9.Direction = ParameterDirection.Input;
+                prm9.Value = InrUsdRate;
+                orclcmd.Parameters.Add(prm9);
+
+                OracleParameter prm10 = new OracleParameter("P_INCREASERATE", OracleType.VarChar, 100);
+                prm10.Direction = ParameterDirection.Input;
+                prm10.Value = IncreaseRate;
+                orclcmd.Parameters.Add(prm10);
+
+                OracleParameter prm11 = new OracleParameter("P_ACTUALPRICEINUSD", OracleType.VarChar, 100);
+                prm11.Direction = ParameterDirection.Input;
+                prm11.Value = ActualPriceUsd;
+                orclcmd.Parameters.Add(prm11);
+
+                OracleParameter prm12 = new OracleParameter("P_DISCOUNTPRICEUSD", OracleType.VarChar, 100);
+                prm12.Direction = ParameterDirection.Input;
+                prm12.Value = DiscountPriceUsd;
+                orclcmd.Parameters.Add(prm12);
+
+                OracleParameter prm13 = new OracleParameter("P_DISCOUNTPERUSD", OracleType.VarChar, 100);
+                prm13.Direction = ParameterDirection.Input;
+                prm13.Value = DiscountPercentageUsd;
+                orclcmd.Parameters.Add(prm13);
+
+                OracleParameter prm14 = new OracleParameter("P_FINALPRICEUSD", OracleType.VarChar, 100);
+                prm14.Direction = ParameterDirection.Input;
+                prm14.Value = FinalAmountUsd;
+                orclcmd.Parameters.Add(prm14);
+
+                OracleParameter prm15 = new OracleParameter("P_INCREASEPRICEININR", OracleType.VarChar, 100);
+                prm15.Direction = ParameterDirection.Input;
+                prm15.Value = IncreasePriceInINR;
+                orclcmd.Parameters.Add(prm15);
+
+                orclcmd.Parameters.Add("OUTFLAG", OracleType.Cursor);
+                orclcmd.Parameters["OUTFLAG"].Direction = ParameterDirection.Output;
+
+
+                
+
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+
+        #region Get Package Price List
+        public DataSet ManagePackage(string Flag , string CatIdFrom , string CatIdTo , string DiscountUsd , string DisCountInr)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_MANAGEPACKAGE", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("P_CATIDFROM", OracleType.VarChar, 100);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = CatIdFrom;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("P_CATIDTO", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = CatIdTo;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("P_DISCOUNT_USD", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = DiscountUsd;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("P_DICOUNT_INR", OracleType.VarChar, 100);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = DisCountInr;
+                orclcmd.Parameters.Add(prm5);
+
+                orclcmd.Parameters.Add("OutFlag", OracleType.Cursor);
+                orclcmd.Parameters["OutFlag"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+        #region Get Date Month Year Hour Minute
+        public DataSet GetDateMonthYearHourMinute(string Flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("ASP_GET_DATEMONTHYEAR", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("Flag", OracleType.VarChar, 200);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                orclcmd.Parameters.Add("p_date", OracleType.Cursor);
+                orclcmd.Parameters["p_date"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_month", OracleType.Cursor);
+                orclcmd.Parameters["p_month"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_year", OracleType.Cursor);
+                orclcmd.Parameters["p_year"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_hour", OracleType.Cursor);
+                orclcmd.Parameters["p_hour"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_minute", OracleType.Cursor);
+                orclcmd.Parameters["p_minute"].Direction = ParameterDirection.Output;
+
+                orclcmd.Parameters.Add("p_second", OracleType.Cursor);
+                orclcmd.Parameters["p_second"].Direction = ParameterDirection.Output;
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+        #region Get Category Price List
+        public DataSet SaveFeedBack(string Flag, string UserName, string EmailID, string PhoneNo, string Message, string GroupId)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_SAVE_FEEDBACK", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("FLAG", OracleType.VarChar, 100);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = Flag;
+                orclcmd.Parameters.Add(prm1);
+
+                OracleParameter prm2 = new OracleParameter("USERNAME", OracleType.NVarChar, 200);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = UserName;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("EMAILID", OracleType.VarChar, 100);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = EmailID;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("PHONENO", OracleType.VarChar, 100);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = PhoneNo;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("MESSAGE", OracleType.NVarChar, 2000);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = Message;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("GROUPID", OracleType.VarChar, 100);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = GroupId;
+                orclcmd.Parameters.Add(prm6);
+
+                orclcmd.Parameters.Add("OutFlag", OracleType.Cursor);
+                orclcmd.Parameters["OutFlag"].Direction = ParameterDirection.Output;
+
+
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+
+        #region Update Razpr Payment Status
+        public DataSet UpdateRazorPayStatus(string CartID , string user_id, string groupid, string payment_id, string order_id,  string Flag)
+        {
+            OracleConnection con = GetConnection();
+            OracleDataAdapter da = new OracleDataAdapter();
+            DataSet ds = new DataSet();
+            OracleCommand orclcmd;
+            try
+            {
+                con.Open();
+                orclcmd = GetCommand("AST_UPDATE_RAZORPAY_PAYMENT", ref con);
+                orclcmd.CommandType = CommandType.StoredProcedure;
+
+                OracleParameter prm1 = new OracleParameter("cart_id", OracleType.VarChar);
+                prm1.Direction = ParameterDirection.Input;
+                prm1.Value = CartID;
+                orclcmd.Parameters.Add(prm1);
+
+                 OracleParameter prm2 = new OracleParameter("user_id", OracleType.VarChar);
+                prm2.Direction = ParameterDirection.Input;
+                prm2.Value = user_id;
+                orclcmd.Parameters.Add(prm2);
+
+                OracleParameter prm3 = new OracleParameter("groupid", OracleType.VarChar);
+                prm3.Direction = ParameterDirection.Input;
+                prm3.Value = groupid;
+                orclcmd.Parameters.Add(prm3);
+
+                OracleParameter prm4 = new OracleParameter("payment_id", OracleType.VarChar);
+                prm4.Direction = ParameterDirection.Input;
+                prm4.Value = payment_id;
+                orclcmd.Parameters.Add(prm4);
+
+                OracleParameter prm5 = new OracleParameter("order_id", OracleType.VarChar);
+                prm5.Direction = ParameterDirection.Input;
+                prm5.Value = order_id;
+                orclcmd.Parameters.Add(prm5);
+
+                OracleParameter prm6 = new OracleParameter("Flag", OracleType.VarChar);
+                prm6.Direction = ParameterDirection.Input;
+                prm6.Value = Flag;
+                orclcmd.Parameters.Add(prm6);
+
+                orclcmd.Parameters.Add("outflag", OracleType.Cursor);
+                orclcmd.Parameters["outflag"].Direction = ParameterDirection.Output;
+                da.SelectCommand = orclcmd;
+                da.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        #endregion
+
+    }
+}

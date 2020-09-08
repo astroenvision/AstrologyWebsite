@@ -1,0 +1,84 @@
+﻿
+.badge-pill-nav {
+    padding-right: 0.55em;
+    padding-left: .55em;
+    border-radius: 10rem;
+}
+.badge-default {
+    color: #525252;
+    background-color: #e2e2e2;
+}
+.badge-custom {
+    display: inline-block;
+    min-width: 10px;
+    padding: 5px 14px;
+    line-height: 2;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.badge-cstm {
+    display: inline-block;
+    padding: .30rem .5rem;
+    font-size: .725rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.badge label {
+    color: #fff !important;
+}
+
+.badge-sblue {
+    background: #1eb3eb;
+    color: #fff;
+}
+
+.badge-success {
+    color: #fff;
+    background-color: #23bf08
+}
+
+.badge-success[href]:hover,
+.badge-success[href]:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3a9d5d
+}
+.badge-pill {
+    border-radius: 10rem
+}
+
+.badge-primary {
+    color: #fff;
+    background-color: #1e8acb;
+}
+
+.badge-primary[href]:hover,
+.badge-primary[href]:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #1985ac
+}
+.badge {
+    display: inline-block;
+    padding: .5em .8em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}

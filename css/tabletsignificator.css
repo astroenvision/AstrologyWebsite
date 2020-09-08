@@ -1,0 +1,119 @@
+﻿@media  (min-width:321px) and (max-width:600px){
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;	padding: 0;
+	color: #000; width:600px;
+}
+	
+.head {width: 570px;}
+.head_ad{display:none}
+.mid_over{width: 580px;}
+.menu {width: 580px; }
+.div_header_significator{width: 560px;overflow:scroll;}
+.divg1homenewpage11{float:left; margin:5px;width:50%;margin-top:10px; height:auto; clear:both;}
+.buttondiv{width:570px;margin-top:10px; height:auto; clear:both;}
+.buttondiv .per_btn { float:left; margin:5px; width:100px !important; border:solid 1px black; text-align:center;}
+
+.div_curve{width: 570px;float:left;}
+.div_curve .divg1homenewpage{width:570px !important;margin:6px !important; overflow:scroll;}
+.divg{width: 580px; overflow:scroll;}
+.mid_sec {width: 580px; border:solid 0px blue;}
+.mid_div2 {width:98%}
+.mid_div3 {width:98%}
+.mid_section2 .mid-head .mid-head-tex-bg {left:20%}
+.mid_section3 .mid-log-head {width:100%}
+.mid_section3 .mid-log-head .mid-log-head-tex{ top:22.5%;}
+.mid_section3 .mid-log-head .mid-log-head-tex-bg{ top:24.5%;left:27%}
+.column{float:left; width:100% !important; position:relative; z-index:1;}
+.div2signi{overflow:scroll;display:none;width:300px;height:250px;float:left;margin-left:10px;}
+.div1signi{overflow:auto;display:none;width:243px;height:250px;margin:0px;}
+.div_header_significator > .d_header_1{padding:3px 0px 3px 5px; background-color:#8cbede;}
+.div_header_significator > .d_header_2{padding:5px 0px 5px 5px; background-color:#fff;}
+.div_header_significator > .d_header_3{padding:5px 48px 11px 5px; background-color:#FFFACD;;}
+.d_header_3s  select {margin:5px; width:530px !important;}
+.d_header_3s >.signidrp{margin:5px; width:120px !important;margin-left:0px !important;}
+.per_btn > .signidrp{margin:10px;width:530px;}
+.signidrp_1
+ {
+ 	 margin-left: 20px;
+ 	 Width:150px;
+ 	  Height:20px;
+ 	  border-radius:5px;
+ 	  margin-left:-8px;
+ 	 
+ }
+ .butt_div{
+ margin-left: 366px; 
+ width: 155px; 
+ margin-top: -21px; 
+ margin-bottom: 5px;
+ }
+ 
+ .butt_div_1{
+margin-left: 284px;
+margin-top:-21;
+  }
+ 
+}
+
+@media screen and  (min-width:10px) and (max-width:320px){
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;margin: 0;	padding: 0;	color: #000; 
+	border:solid 10px black;
+}
+.head {width: 270px;}
+.head_ad{display:none}
+.mid_over{width: 280px;}
+.menu {width: 280px; }
+.div_header_significator{width: 270px;overflow:scroll;}
+.divg1homenewpage11{float:left; margin:5px;width:50%;margin-top:10px; height:auto; clear:both;}
+.buttondiv{width:270px;margin-top:10px; height:auto; clear:both;}
+.buttondiv .per_btn { float:left; margin:5px; width:100px !important; border:solid 1px black; text-align:center;}
+
+.div_curve{width: 270px;float:left;}
+.div_curve .divg1homenewpage{width:270px !important;margin:6px !important; overflow:scroll;}
+.divg{width: 280px; overflow:scroll;}
+.mid_sec {width: 280px; border:solid 0px blue;}
+.mid_div2 {width:98%}
+.mid_div3 {width:98%}
+.mid_section2 .mid-head .mid-head-tex-bg {left:20%}
+.mid_section3 .mid-log-head {width:100%}
+.mid_section3 .mid-log-head .mid-log-head-tex{ top:22.5%;}
+.mid_section3 .mid-log-head .mid-log-head-tex-bg{ top:24.5%;left:27%}
+.column{float:left; width:100% !important; position:relative; z-index:1;}
+.div2signi{overflow:scroll;display:none;width:270px;height:250px;float:left;}
+.div1signi{overflow:auto;display:none;width:270px;height:250px;margin:0px;}
+.div_header_significator > .d_header_1{padding:3px 0px 3px 5px; background-color:#8cbede;}
+.div_header_significator > .d_header_2{padding:5px 0px 5px 5px; background-color:#fff;}
+.div_header_significator > .d_header_3{padding:5px 48px 11px 5px; background-color:#8cbede;}
+.d_header_3s  select {margin:5px; width:230px !important;}
+.d_header_3s >.signidrp{margin:5px; width:230px !important;margin-left:0px !important;}
+.per_btn > .signidrp{margin:10px;width:230px;}
+
+
+.signidrp_1
+ {
+ 	 margin-left: 20px;
+ 	 Width:226px;
+ 	  Height:20px;
+ 	  border-radius:5px;
+ 	  margin-left:-1px;
+ 	  margin-bottom: 14px;
+ 	  margin-right: 43px;
+ }
+ 
+  .butt_div{
+ margin-left: 35px;
+  margin-top: 8px;
+ }
+ 
+ .butt_div_1{
+ margin-left: 16px; 
+ margin-top: 0px
+  }
+ 
+ 
+ 
+}

@@ -1,0 +1,107 @@
+﻿/*@media  (min-width:321px) and (max-width:900px){
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;	padding: 0;
+	color: #000; width:600px;
+}
+	.head {width: 570px;}
+.head_ad{display:none}
+.mid_over{width: 580px;}
+
+.menu {width: 570px; height:31px; }
+
+.buttondiv{width:570px;margin-top:10px; height:auto; clear:both;}
+.buttondiv .per_btn { float:left; margin:5px; width:100px !important; border:solid 1px black; text-align:center;}
+
+.mid_seca {width: 560px !important;margin:5px 0px 0px 5px !important; border:solid 0px blue;}
+fieldset
+{border:1px solid #8cbede;margin-left:6% ;width:80% ;border-radius:15px;
+}
+.per_btn{margin-left:-70px !important;}
+.textbox{width:100% ;margin-left:0px ;}
+table{margin-left:-10px !important;font-size: 10px;}
+.menuf{width:570px;}
+}
+@media screen and  (min-width:10px) and (max-width:320px){
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;margin: 0;	padding: 0;	color: #000; 
+	border:solid 10px black;
+}
+.head {width: 270px;}
+.head_ad{display:none}
+.mid_over{width: 280px;}
+
+.menu {width: 280px; height:55px; }
+
+.buttondiv{width:270px;margin-top:10px; height:auto; clear:both;}
+.buttondiv .per_btn { float:left; margin:5px; width:100px !important; border:solid 1px black; text-align:center;}
+
+.mid_seca {width: 260px !important;margin:5px 0px 0px 5px !important; border:solid 0px blue;}
+fieldset
+{border:1px solid #8cbede;margin-left:2% !important;width:80% !important;border-radius:15px;
+}
+.per_btn{margin-left:-70px !important;}
+.textbox{width:100% !important;margin-left:0px !important;}
+table{margin-left:-10px !important;font-size: 10px;}
+.menuf{width:286px; height:48px;}
+}*/
+
+
+@media
+	  only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Planets"; }
+		td:nth-of-type(2):before { content: "Rashi"; }
+		td:nth-of-type(3):before { content: "House"; }
+		td:nth-of-type(4):before { content: "Degree"; }
+		td:nth-of-type(5):before { content: "Minutes"; }
+		td:nth-of-type(6):before { content: "Seconds"; }
+		td:nth-of-type(7):before { content: "Retro"; }
+		td:nth-of-type(8):before { content: "Const"; }
+	}

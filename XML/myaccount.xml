@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<NewDataSet>
+	<Table>
+  
+   
+  
+<td>By Name</td>
+      <td1>CLIENT_NAME</td1>
+
+   <td2>By Mobile</td2>
+      <td3>MOBILE_NO</td3>
+    
+    <td4>By E-Mail</td4>
+      <td5>CLIENT_MAIL</td5>
+    
+
+
+	</Table>
+</NewDataSet>

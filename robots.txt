@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+Disallow: /signin.html
+Disallow: /signup.html
+Disallow: /CheckOutCart.html
+Disallow: /forgot_password.html
+Disallow: /enterdetails.aspx
+Disallow: /auto_razorpay.aspx
+Disallow: /thankyou_ccavenue.aspx
+Disallow: /freehoroscope_report.aspx
+Disallow: /login.aspx
+Disallow: /admin/
+Disallow: /AdminLogin.aspx
+Disallow: /GenerateTodayChart.aspx
+Noindex: /admin/
+Noindex: /AdminLogin.aspx

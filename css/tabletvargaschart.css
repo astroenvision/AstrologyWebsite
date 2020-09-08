@@ -1,0 +1,259 @@
+﻿@media  (min-width:321px) and (max-width:900px){
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;	padding: 0;
+	color: #000; width:600px;
+}
+	
+
+.head {width: 570px;}
+.head_ad{display:none}
+/* .mid_over{width: 570px;} */
+.menu {width: 570px; height:31px; }
+.div_header{width: 528px;overflow:scroll;float:left;}
+
+.divg1homenewpage11{float:left; margin:5px;width:570px;margin-top:10px; height:auto; clear:both;}
+.buttondiv{width:440px;margin-top:10px; height:auto; clear:both;}
+.buttondiv .per_btn_vargas { float:left; margin:5px;  border:solid 1px black; text-align:center; }
+.divg1homenewpage{width:570px;overflow:scroll;}
+.div_curve_vargas{width:528px !important;margin:4px !important;float:left;height: 469px;}
+.divg{width:580px; overflow:scroll;}
+/* .mid_sec {width:560px; border:solid 0px blue;} */
+.mid_div2 {width:98%}
+.mid_div3 {width:98%}
+.mid_section2 .mid-head .mid-head-tex-bg {left:20%}
+.mid_section3 .mid-log-head {width:100%}
+.mid_section3 .mid-log-head .mid-log-head-tex{ top:22.5%;}
+.mid_section3 .mid-log-head .mid-log-head-tex-bg{ top:24.5%;left:27%}
+
+ .div-scroll_vargas
+  { 
+  	overflow:scroll;
+  	 width: 538px;
+    }  
+    
+    
+     
+.divg1_vargas
+  { 
+  	width:438px;
+  	margin-left:-12px;
+  	margin-top: 20px; 
+  	padding-bottom: 10px
+  	
+  	
+    }
+      .for_align_menu {
+    margin-left: 190px;
+    display: none;
+    margin-top: 10px;
+  
+} 
+.loadingimage {
+    margin-left: 220px;
+}
+.div_name_id_div
+{     -moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	 background-color: White;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-shadow: 2px 2px 5px #000;
+   border:1px solid #e3e3e3;
+    margin-left: 36px;
+     margin-top: 10px;
+      display:none; 
+      width:200px;
+       float:left;
+       left: 20px;
+        margin-bottom: 10px;
+   
+   
+}
+
+.div_curve_combi {
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-decoration: none;
+    border: 1px solid rgb(227, 227, 227);
+    margin: 135px 10px 10px 12px;
+    height:500px !important;
+    font-size: 12px;
+    font-weight: 400;
+    height: auto;
+    max-height: 500px;
+}
+.menuf{width:570px;}
+
+.sec_varga
+{
+ margin-top: 318px;
+}
+.varga_lbl
+{margin-left: 158px;}
+.columnd01{float:left; width:60% !important; position:relative; z-index:1; margin-left:22px;}
+.column{float:left; width:60% !important; position:relative; z-index:1; margin-left:22px;}
+.column-divr1, .column-divr2, .column-divr3, .column-divr4, .column-divr5, .column-divr6, .column-divr7, .column-divr8, .column-divr9, .column-divr10, .column-divr11, .column-divr12, 
+	 span {text-align:left; color:#0f16aa; font-size:15px;}
+	.mar_div_chart{margin-left: 90px;} 
+	.h_filters   
+ {  color:Black;
+    margin-left:3px;
+    width:97%;
+    float:left;
+  }
+  
+  
+.filterss   
+ {  color:Black;
+    font-weight:bold;
+    margin-left:3px;
+    width:100%;
+    float:left;
+  }
+.column1y{display:none;margin-top:20px !important;float:left; width:50% !important; margin-left: 120px; position:relative; z-index:1;}
+.drp_lbl_div{margin-left:400px;margin-top:10px;}
+}
+
+@media screen and  (min-width:10px) and (max-width:320px){
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;margin: 0;	padding: 0;	color: #000; 
+	border:solid 10px black;
+}
+.head {width: 270px;}
+.head_ad{display:none}
+/* .mid_over{width: 280px;} */
+.menu {width: 280px; height:55px; }
+.div_header{width: 270px;overflow:scroll;}
+.divg1homenewpage11{float:left; margin:5px;width:50%;margin-top:10px; height:auto; clear:both;}
+.buttondiv{width:270px;margin-top:10px; height:auto; clear:both;margin-left: -13px;float:left;}
+.buttondiv .per_btn_vargas { float:left; margin:5px; width:100px !important; border:solid 1px black; text-align:center; height:14px;}
+
+.div_curve_vargas{width: 256px;float:left; height:580px;}
+.div_curve .divg1homenewpage{width:270px !important;margin:6px !important; overflow:scroll;}
+.divg{width: 280px; overflow:scroll;}
+
+.mid_div2 {width:98%}
+.mid_div3 {width:98%}
+.mid_section2 .mid-head .mid-head-tex-bg {left:20%}
+.mid_section3 .mid-log-head {width:100%}
+.mid_section3 .mid-log-head .mid-log-head-tex{ top:22.5%;}
+.mid_section3 .mid-log-head .mid-log-head-tex-bg{ top:24.5%;left:27%}
+.columnd01{float:left; width:88% !important; position:relative; z-index:1; margin-left:22px;}
+.column{float:left; width:88% !important; position:relative; z-index:1;}
+ .div-scroll_vargas
+  { 
+  	overflow:scroll;
+  	 width: 252px;
+    }  
+    
+    
+.div_name_id_div
+{     -moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	 background-color: White;
+    border-left-width: 0;
+    border-right-width: 0;
+    box-shadow: 2px 2px 5px #000;
+   border:1px solid #e3e3e3;
+    margin-left: 36px;
+     margin-top: 10px;
+      display:none; 
+      width:200px;
+       float:left;
+       left: 20px;
+        margin-bottom: 10px;
+   
+   
+}
+
+ 
+.divg1_vargas
+  { 
+  	width:300px;
+  	margin-left:-12px;
+  	margin-top: 20px; 
+  	padding-bottom: 10px
+  	
+  	
+    }
+    .drpo_homenew_new
+{
+	width:184px;
+	font-size:11px;font-family: Open Sans;
+	margin-right: 70px;
+ margin-top:10px;
+	
+}
+    
+    .colum-td-head_new {background-color:#65b6fc; height:25px; text-decoration:none;color:#fff;  font-size:12px;font-weight:bold;text-align:center;border:0px solid #ffffff; margin:0px auto; padding:0px 10px 0px 10px;text-align:left;}
+
+.menuf{width:286px; height:48px;}
+
+.sec_varga
+{
+ margin-top: 250px;
+}
+.varga_lbl
+{margin-left: 124px;}
+.mar_div_chart{margin-left: 0px;} 
+.h_filters   
+ {  color:Black;
+    margin-left:3px;
+    width:97%;
+    float:left;
+  }
+  
+  .filterss   
+ {  color:Black;
+    font-weight:bold;
+    margin-left:3px;
+    width:100%;
+    float:left;
+  }
+.column1y{display:none;left:0px;margin-top:20px !important;float:left; width:100% !important; position:relative; z-index:1;}
+.div_curve_combi {
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-decoration: none;
+    border: 1px solid rgb(227, 227, 227);
+    margin: 135px 10px 10px 12px;
+    height:500px !important;
+    font-size: 12px;
+    font-weight: 400;
+    height: auto;
+    max-height: 500px;
+}
+.for_align_menu
+{  
+	margin-left:30px;
+	display:none;
+	margin-top:10px;
+	width:219px;
+}
+.drp_lbl_div{margin-left:70px;margin-top:10px;}
+}
+
+
+
+@media screen and (max-width:570px){
+	.yoga_drop1>.yogaPRH{
+		width: 50%;
+	}
+	
+	.hora_div_text
+	{
+		
+	}
+}
+
+@media screen and (max-width:430px){
+	.yoga_drop1>.yogaPRH{
+		width: 100%;
+	}
+	
+	.hora_div_text>input
+	{
+		width: 100px;
+	}
+}

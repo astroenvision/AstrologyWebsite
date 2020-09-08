@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NewDataSet>
+  <Table>
+    <td>Center&lt;font color=red&gt;*&lt;/Font&gt;</td>
+    <td1>Branch&lt;font color=red&gt;*&lt;/Font&gt;</td1>
+    <td2>User Name&lt;font color=red&gt;*&lt;/Font&gt;</td2>
+    <td3>Password&lt;font color=red&gt;*&lt;/Font&gt;</td3>
+    <td4>Login</td4>
+    <td5>Agency</td5>
+    <td6>Company</td6>
+    <td7>Agency</td7>
+
+  </Table>
+</NewDataSet>

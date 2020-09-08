@@ -1,0 +1,55 @@
+/* jquerydemo.com */
+
+#slider {
+    width:270px;
+    margin: 0%;
+    position: relative;	
+    border:1px solid gray;
+    float:left;
+}
+
+.slider-img {
+    margin:0; 
+    float: left;
+    position: relative;
+    width: 270px;
+}
+
+.caption  {
+    color:#DC6804; 
+    padding:5px 10px 10px 10px; 
+    margin:0; 
+    font-family:Verdana; 
+    text-transform:uppercase; 
+    font-size:12px;
+}
+    
+.slider-mask {
+    overflow:hidden;
+    position: relative;
+}   
+   
+#button-prev {
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+    left: 95px;
+}
+
+#button-next {
+    position: absolute;
+    top: 200px;
+    cursor: pointer;
+    right: 95px;
+}
+
+/* 
+adjust #slider-content width as needed 
+width = image width * image count
+width = 600px * 3 = 1800px 
+*/
+#slider-content {
+    width: 1800px;
+    position: relative;
+}    
+

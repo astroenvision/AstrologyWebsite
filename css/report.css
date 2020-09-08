@@ -1,0 +1,60 @@
+﻿@media (max-width:767px) {
+    .bannerarea {
+        width:1000px !important;
+    }
+}
+
+
+/*.grdcssstyle table, th, td {
+  border: 0px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.grdcssstyle th, td {
+  padding: 5px;
+  text-align: left;
+}*/
+
+
+.grdheaderStyleth
+{
+    padding: 0.15cm;
+        border:1px solid #ece6e6;
+}
+.grdheaderStyle
+{
+    background-color: #8a6848;
+    text-align:left;
+    color:white;
+    padding: 0.15cm;
+}
+.grdrowStyle
+{
+
+}
+.grditemStyle
+{
+    background-color: #FFFFEE;
+    color: #000000;
+    text-align:left;
+    padding:0.15cm;
+    border:1px solid #ece6e6;
+}
+
+.grdalternateItemStyle {
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align:left;
+    padding: 0.15cm;
+}
+.grdfooterStyle
+{
+
+}
+.grdfootherStyletd
+{
+    background-color: #8a6848;
+    padding: 0.15cm;
+         color:white;
+    text-align:left;
+}

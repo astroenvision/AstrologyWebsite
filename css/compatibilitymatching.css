@@ -1,0 +1,175 @@
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+	color: #000;
+	margin: 0;
+}
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+img, a, span {
+    display: inline-block;
+}
+
+.capMtch{
+	font-size: 28px;
+    font-weight: 700;
+    text-decoration: underline;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.capCont{
+	max-width: 1000px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.capTable-responsive{
+	min-height: .01%;
+    overflow-x: auto;
+}
+
+.capTable{
+	width: 100%;
+    max-width: 100%;
+	    border: 1px solid #ddd;
+		    border-spacing: 0;
+    border-collapse: collapse;
+	    display: table;
+}
+
+.capTable>tbody>tr>td, .capTable>tbody>tr>th, .capTable>tfoot>tr>td, .capTable>tfoot>tr>th, .capTable>thead>tr>td, .capTable>thead>tr>th {
+    border: 1px solid #ddd;
+}
+
+.capTable>tbody>tr>td, .capTable>tbody>tr>th, .capTable>tfoot>tr>td, .capTable>tfoot>tr>th, .capTable>thead>tr>td, .capTable>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+
+.capTable>thead>tr>td, .capTable>thead>tr>th {
+    border-bottom-width: 2px;
+	text-align: left;
+}
+
+.capradio{
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.radioDv{
+	font-size: 17px;
+    background: #e4e4e4;
+    padding: 8px 10px;
+    font-weight: bold;
+}
+
+.radioDv:hover{
+	background: #222;
+    color: #fff;
+}
+
+.radioDvLt{
+	width: 260px;
+}
+
+.radioDvRt{
+	transform: scale(1.2);
+}
+
+.capBy{
+	font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.capCenter{
+	text-align: center !important;
+}
+
+.capMatch{
+	margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    background: #e4e4e4;
+    padding: 12px 15px;
+    line-height: 1;
+    border-radius: 4px;
+}
+
+.capGl{
+	font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.capButtonDv{
+	text-align: right;
+}
+
+.capButtonDvCt{
+	text-align: center;
+}
+
+.capButton{
+	    text-align: left;
+    padding: 7px 16px;
+    margin-top: 10px;
+    background: #333;
+    border: solid 1px #333;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.capButtonBtm{
+	margin-bottom: 10px;
+}
+
+.capButton2{
+        padding: 8px 16px;
+    margin-top: 40px;
+    background: #333;
+    border: solid 1px #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.radioDvmrg{
+	margin-right: 15px;
+}
+
+.capradioDv{
+	text-align: center;
+}
+
+.capBld{
+	font-weight: bold;
+}
+
+.capuPy{
+	font-size: 18px;
+    margin-top: 25px;
+}
+
+
+@media screen and (max-width: 767px){
+	.capTable-responsive {
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid #ddd;
+	}
+}

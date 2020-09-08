@@ -1,0 +1,58 @@
+﻿@media  (min-width:321px) and (max-width:600px){
+
+
+body {
+}
+.loadingimage {
+    margin-left: 200px;
+}
+.horary_combination_css {
+    display: none;
+    overflow: auto;
+    width: 530px;
+    height: auto;
+    margin-left: 3px;
+    margin-top: 19px;
+    max-height: 150px;
+    border: 1px solid;
+}
+
+.subfill-css{margin-left: 377px; margin-top: -24px;}
+.nainfill-css{margin-left: 111px; margin-top:8px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and  (min-width:10px) and (max-width:320px){
+
+
+body 
+{
+	
+}
+.nainfill-css{margin-left: 3px; margin-top:8px;}
+
+.subfill-css { margin-left: 3px; margin-top: 9px;}
+}

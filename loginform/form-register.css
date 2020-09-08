@@ -1,0 +1,502 @@
+.main-content_registration{
+    width:60%;
+    float:left;
+    margin:2% 0% 0% 2%;
+}
+
+.main-contentregistration{
+    width:60%;
+    float:left;
+    margin:2% 0% 0% 20%;
+}
+
+.form-register-usertype{
+    width: 100%;
+    margin: 0 auto;
+    padding:0em 0em 0.50em 0em;
+    font: normal 1em sans-serif;
+    text-align: center;
+}
+.form-register-usertype table
+{
+	width:100%;
+}
+.form-register-usertype table tr td input
+{
+	    width: 20px;
+    height: 16px;
+    margin:0em 0em 0em 0em;
+}
+.form-register-usertype table tr td label
+{
+	font-family:sans-serif;
+	color: #5f5f5f;
+	font-size: 0.95em;
+    font-weight: bold;
+    margin:0 1.5em 0 0.25em;
+}
+.form-register-usertype table tr td:first-child
+{
+	text-align:right;
+}
+.form-register-usertype table tr td:last-child
+{
+	text-align:left;
+}
+
+.form-register{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    font: bold 14px sans-serif;
+    text-align: center;
+}
+
+.form-register-with-email{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin:0% 0% 0% 0%;
+    width: 98%;
+    float:left;
+}
+
+.form-register-with-email .form-white-background{
+     width: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+   padding: 2% 5% 2% 5%;
+    margin-bottom: 35px;
+      -webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+box-shadow: 0px 0px 3px 2px #CAC6C6;
+-moz-box-shadow: 0px 0px 3px 2px #CAC6C6;
+-webkit-box-shadow: 0px 0px 3px 2px #CAC6C6;
+}
+
+.form-register-with-email .form-row{
+    text-align: left;
+    margin-bottom: 18px;
+}
+.form-register-with-email .form-row-price{
+    text-align: center;
+    margin-bottom: 18px;
+}
+.Gridview
+{
+	color:#5f5f5f;
+	width:90%;
+	margin: 0 auto;
+}
+.Gridview tr td input
+{
+	width: 17px;
+    height: 17px;
+}
+.form-register-with-email .form-row-price label span
+{
+	color: #5f5f5f;
+}
+
+.form-register-with-email .form-title-row{
+    text-align: center;
+    margin-bottom: 25px;
+        border-bottom: 2px solid #f4600a;
+        float:left;
+        width: 100%;
+}
+
+.form-register-with-email h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 1.2em;
+    padding: 0 0 0.50em 0;
+    border-bottom: 0px solid #f4600a;
+    margin: 0;
+    text-align: left;
+    float: left;
+}
+.form-register-with-email h2{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #e33335;
+    font-size: 0.90em;
+    padding: 0 0 0.45em 0;
+    border-bottom: 0px solid #f4600a;
+    margin: 0;
+    text-align: left;
+    float: right;
+}
+
+.form-register-with-email .form-row > label span{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 26%;
+    text-align: right;
+    padding-right: 25px;
+}
+.form-register-with-email .form-row > span{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  black;
+    width: 100%;
+    text-align: left;
+    padding-left: 128px;
+    font-weight: bold;
+    font-size: 0.85em;
+}
+.form-register-with-email .form-row .form-conditions{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #5f5f5f;
+    width: 100%;
+    text-align: left;
+    padding-left: 128px;
+    font-size: 0.75em;
+    margin: 1% 0% 0% 0%;
+    font-weight: normal;
+}
+
+.form-register-with-email input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 60%;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 18px;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+}
+
+.form-register-with-email .form-checkbox input{
+    margin-left: 128px;
+    margin-right: 10px;
+    width: auto;
+    vertical-align: top;
+}
+
+.form-register-with-email .form-row .form-checkbox span{
+    font-size: 12px;
+    font-weight: normal;
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+    margin: 0;
+}
+.form-register-with-email .form-row .form-checkbox span a
+{
+	font-weight:bold;
+	color:Blue;
+}
+
+.form-register-with-email .form-checkbox span a{
+    text-decoration: none;
+    color:  #6caee0;
+}
+
+.form-register-with-email button{
+    display: block;
+    border-radius: 20px;
+    background-color: #f4600a;
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 9px 34px;
+    border: 0;
+    margin: 55px auto 0;
+    cursor: pointer;
+}
+
+.form-register-with-email .form-row label table
+{
+	display: inline;
+}
+.form-register-with-email .form-row label table tr td
+{
+	display: inline-block;
+}
+.form-register-with-email .form-row label table tr td
+{
+	   color: #5f5f5f;
+}
+.form-register-with-email .form-row label table tr td label
+{
+	margin: 0 1.5em 0 0.25em;
+}
+.form-register-with-email .form-row label table tr td input
+{
+   box-shadow:none;
+   width: 20px;
+    height: 16px;
+    margin: 0em 0em 0em 0em;
+}
+
+/*.form-register-with-email .form-log-in-with-existing{
+    text-decoration: none;
+    padding: 4px 8px;
+    font-weight: normal;
+    color: #7b9d62;
+    background-color: #d6f0c3;
+}
+
+.form-register-with-email:after{
+    content: 'OR';
+    position: absolute;
+    bottom: 330px;
+    right: -100px;
+
+    border-radius: 50%;
+    background-color: #edeca5;
+    width: 50px;
+    height: 50px;
+    color: #93923b;
+    font-size: 17px;
+    line-height: 50px;
+}*/
+
+.form-sign-in-with-social{
+    display: inline-block;
+    max-width: 180px;
+    box-sizing: border-box;
+    vertical-align: top;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.form-sign-in-with-social .form-title-row{
+    margin-bottom: 50px;
+}
+
+.form-sign-in-with-social .form-title{
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 15px 20px;
+    border-bottom: 2px solid #6caee0;
+}
+
+.form-sign-in-with-social .form-google-button{
+    color:  #ffffff;
+    display: block;
+    width: 145px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color:  rgba(222, 110, 60, 0.9);
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin: 8px auto;
+    text-decoration: none;
+}
+
+.form-sign-in-with-social .form-facebook-button{
+    color:  #ffffff;
+    display: block;
+    width: 145px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color:  rgba(75, 136, 194, 0.9);
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin: 8px auto;
+    text-decoration: none;
+}
+
+.form-sign-in-with-social .form-twitter-button{
+    color:  #ffffff;
+    display: block;
+    width: 145px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 40px;
+    background-color:  rgba(123, 195, 226, 0.9);
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    margin: 8px auto;
+    text-decoration: none;
+}
+
+.dropdowncss
+{
+	color: #5f5f5f !important;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 11px 10px 11px 10px!important;
+    margin: 0em !important;
+    border: 1px solid #dbdbdb !important;
+    border-radius: 6px;
+    width: 60%;
+}
+
+/*	Making the form responsive. Remove these media queries
+    if you don't need the form to work on mobile devices. */
+
+@media (max-width: 900px) {
+
+    .form-register{
+        margin: 20px auto;
+    }
+
+    .form-register-with-email{
+        position: relative;
+        display: block;
+        margin: 0;
+    }
+
+    .form-register-with-email .form-white-background{
+        margin: 0 auto 32px;
+    }
+
+    .form-register-with-email:after{
+        bottom: -80px;
+        left: 50%;
+        margin-left: -25px;
+    }
+
+    .form-sign-in-with-social {
+        margin-top: 105px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .form-register-with-email .form-white-background{
+        width: 300px;
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
+    .form-register-with-email .form-row > label span{
+        display: block;
+        text-align: left;
+        padding: 0 0 10px;
+    }
+
+    .form-register-with-email input{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .form-register-with-email .form-checkbox input{
+        display: inline-block;
+        margin-left: 0;
+    }
+
+    .form-register-with-email .form-checkbox span{
+        width: 200px !important;
+    }
+
+    .form-register-with-email:after{
+        bottom: -80px;
+        left: 50%;
+        margin-left: -25px;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (min-width:540px) and (max-width:960px)
+{
+	.main-contentregistration
+	{
+		width: 97%;
+		margin: 3% 0% 0% 3%;
+	}
+	.form-register-with-email .form-white-background{
+        width: 100%;
+        padding-left: 15px;
+		padding-right: 15px;
+    }
+    .form-register-with-email h1
+    {
+    	font-size: 0.90em;
+    }
+    .form-register-with-email h2
+    {
+    	font-size: 0.80em;
+    }
+    .form-register-with-email .form-row > label span{
+        display: inline-block;
+        padding: 0 0 10px;
+        width: 125px;
+    }
+     .form-register-with-email input{
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .form-register-with-email .form-row .form-conditions
+    {
+      padding:0% !important;
+    }
+    .form-register-with-email .form-row
+    {
+    	margin-bottom: 5px;
+    	text-align: center;
+    }
+}
+
+@media screen and (max-width:540px)
+{
+	.main-contentregistration
+	{
+		width: 97%;
+		margin: 3% 0% 0% 3%;
+	}
+	.form-register-with-email .form-white-background{
+        width: 100%;
+        padding-left: 15px;
+		padding-right: 15px;
+    }
+    .form-register-with-email h1
+    {
+    	font-size: 0.90em;
+    }
+    .form-register-with-email h2
+    {
+    	font-size: 0.80em;
+    }
+    .form-register-with-email .form-row > label span{
+        display: inline-block;
+        padding: 0 0 10px;
+        width: 125px;
+    }
+     .form-register-with-email input{
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .form-register-with-email .form-row .form-conditions
+    {
+      padding:0% !important;
+    }
+    .form-register-with-email .form-row
+    {
+    	margin-bottom: 5px;
+    	text-align: center;
+    }
+    
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.form-register-with-email .form-row > label span 
+	{
+		width:100px;
+		font-size: 0.95em;
+	}
+	.form-register-with-email h1 {
+      font-size: 0.80em;
+	}
+}
